@@ -60,7 +60,7 @@ while(a>0):
       shuru.clear()
     except Exception as e:
      print('输入框本来就是空的')
-     driver.close()
+    driver.close()
      
 
 
