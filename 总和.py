@@ -1,4 +1,4 @@
-#2.0版本，程序不会自动关闭
+#2.0版本，程序不会自动关闭，浏览器会自动关闭
 import docx
 from docx import Document
 import time
@@ -60,6 +60,8 @@ while(a>0):
       shuru.clear()
     except Exception as e:
      print('输入框本来就是空的')
+     driver.close()
+     
 
 
 
