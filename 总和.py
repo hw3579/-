@@ -1,4 +1,5 @@
 #2.0版本，程序不会自动关闭，浏览器会自动关闭
+
 import docx
 from docx import Document
 import time
@@ -12,7 +13,9 @@ from selenium.common.exceptions import StaleElementReferenceException
 from bs4 import BeautifulSoup
 import re
 a=1
+driver=webdriver.Chrome()
 while(a>0):
+ print("==================================")
  path1=input("请输入路径：")
 
 
@@ -34,34 +37,34 @@ while(a>0):
 
        
 
- driver=webdriver.Chrome()
+ 
 #准备url
  url='http://www.baidu.com'
  # 访问
  driver.get(url)
 #浏览器大小
- driver.set_window_size(800,600)
+ driver.set_window_size(800,1200)
 
 # 找到输入框 （kw后面会具体解释，还有下面具体的标签）
  shuru=driver.find_element_by_id('kw')
 # 在输入框中放我们制定的文字
  for i in range(len(file.paragraphs)):
     try:
-     shuru.send_keys(file.paragraphs[i].text)
+       shuru.send_keys(file.paragraphs[i].text)
    #为了我们肉眼可见，这里休眠2秒，再进行下面的操作
-     time.sleep(1)
+       time.sleep(1)
     except Exception as e:
-     print('段落是空的！')
+       print('段落是空的！')
 
     login=driver.find_element_by_id('su')# 定位到登录按钮的位置
     login.click()# 点击登录
     time.sleep(1)
     try:
-      shuru.clear()
+       shuru.clear()
     except Exception as e:
-     print('输入框本来就是空的')
-    driver.close()
-     
+       print('输入框本来就是空的')
+
+    
 
 
 
@@ -71,6 +74,7 @@ while(a>0):
 
 
 print("没啦")
+print("==========================================")
 
 
 
