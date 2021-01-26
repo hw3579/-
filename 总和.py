@@ -1,4 +1,4 @@
-
+#2.0版本，程序不会自动关闭
 import docx
 from docx import Document
 import time
